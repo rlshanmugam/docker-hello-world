@@ -9,7 +9,7 @@ template:
   spec:
     type: CI
     spec:
-      cloneCodebase: false
+      cloneCodebase: true
       platform:
         os: Linux
         arch: Amd64
@@ -24,6 +24,6 @@ template:
               identifier: BuildAndPushDockerRegistry_1
               spec:
                 connectorRef: DockerhubHelloworld
-                repo: cicdpoc-harness
+                repo: rlshanmugam/cicdpoc-harness
                 tags:
                   - v1
