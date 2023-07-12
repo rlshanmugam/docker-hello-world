@@ -1,5 +1,5 @@
 template:
-  name: Git Clone
+  name: Continuous Integration
   identifier: Git_Clone
   versionLabel: v1
   type: Stage
@@ -9,7 +9,7 @@ template:
   spec:
     type: CI
     spec:
-      cloneCodebase: true
+      cloneCodebase: false
       platform:
         os: Linux
         arch: Amd64
