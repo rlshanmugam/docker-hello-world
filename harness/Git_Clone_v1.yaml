@@ -27,3 +27,5 @@ template:
                 repo: rlshanmugam/cicdpoc-harness
                 tags:
                   - v1
+    when:
+      pipelineStatus: All
