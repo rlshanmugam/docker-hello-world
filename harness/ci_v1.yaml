@@ -38,3 +38,5 @@ pipeline:
                       - v1
         when:
           pipelineStatus: All
+        delegateSelectors:
+          - helm-delegate
