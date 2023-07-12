@@ -38,6 +38,3 @@ pipeline:
                       - v1
         when:
           pipelineStatus: All
-        delegateSelectors:
-          - helm-delegate
-          - eagl-awslab-terraform-delegate
