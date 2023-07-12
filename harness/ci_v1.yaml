@@ -1,0 +1,43 @@
+pipeline:
+  name: Helloworld-CI
+  identifier: HelloworldCI
+  projectIdentifier: MyTestLab
+  orgIdentifier: EA
+  description: Shanmugam Ramlakshman
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: e698066GithubPersonalToken
+        repoName: docker-hello-world
+        build: <+input>
+  stages:
+    - stage:
+        name: Docker Build
+        identifier: Docker_Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: DockerhubHelloworld
+                    repo: rlshanmugam/cicdpoc
+                    tags:
+                      - v1
+        when:
+          pipelineStatus: All
+        delegateSelectors:
+          - helm-delegate
+          - eagl-awslab-terraform-delegate
