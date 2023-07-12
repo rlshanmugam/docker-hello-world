@@ -1,0 +1,29 @@
+template:
+  name: Git Clone
+  identifier: Git_Clone
+  versionLabel: v1
+  type: Stage
+  projectIdentifier: MyTestLab
+  orgIdentifier: EA
+  tags: {}
+  spec:
+    type: CI
+    spec:
+      cloneCodebase: true
+      platform:
+        os: Linux
+        arch: Amd64
+      runtime:
+        type: Docker
+        spec: {}
+      execution:
+        steps:
+          - step:
+              type: BuildAndPushDockerRegistry
+              name: BuildAndPushDockerRegistry_1
+              identifier: BuildAndPushDockerRegistry_1
+              spec:
+                connectorRef: DockerhubHelloworld
+                repo: cicdpoc-harness
+                tags:
+                  - v1
