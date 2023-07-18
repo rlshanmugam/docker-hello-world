@@ -19,12 +19,6 @@ pipeline:
         type: CI
         spec:
           cloneCodebase: true
-          platform:
-            os: Linux
-            arch: Amd64
-          runtime:
-            type: Docker
-            spec: {}
           execution:
             steps:
               - step:
@@ -36,6 +30,14 @@ pipeline:
                     repo: rlshanmugam/cicdpoc
                     tags:
                       - v1
+          infrastructure:
+            type: VM
+            spec:
+              type: Pool
+              spec:
+                poolName: DockerPOC
+                harnessImageConnectorRef: DockerhubHelloworld
+                os: Linux
         when:
           pipelineStatus: All
         delegateSelectors:
