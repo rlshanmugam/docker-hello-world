@@ -1,0 +1,12 @@
+template:
+  name: CI pipeline
+  type: Step
+  projectIdentifier: MyTestLab
+  orgIdentifier: EA
+  spec:
+    type: Run
+    spec:
+      shell: Sh
+      command: echo " Build is successful in MyTestLab Project under HelloworldCI pipeline  "
+  identifier: CI_pipeline
+  versionLabel: "1"
